@@ -2,8 +2,9 @@
   "name": "sober-run",
   "version": "1.0.0",
   "description": "A simple browser game that might teach you to say no to that tequila shot on your next night out.",
-  "main": "index.js",
+  "private": true,
   "scripts": {
+    "start": "webpack --watch --config webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/dansuhhh/sober-run/issues"
   },
-  "homepage": "https://github.com/dansuhhh/sober-run#readme"
+  "homepage": "https://github.com/dansuhhh/sober-run#readme",
+  "dependencies": {
+    "webpack": "^4.42.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.11"
+  }
 }
