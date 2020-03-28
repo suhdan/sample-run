@@ -2,6 +2,12 @@
 
 A simple browser game that might teach you to say **no** to that tequila shot on your next night out. Inspired by Google's [T-Rex, Run!][google-game].
 
+## Local Setup
+
+- Download Node.js [here][node]
+- `npm install`
+- `npm start`
+
 ## TODO
 
 - [ ] Host on public domain
@@ -18,3 +24,4 @@ A simple browser game that might teach you to say **no** to that tequila shot on
   - [ ] End
 
 [google-game]: https://elgoog.im/t-rex/
+[node]: https://nodejs.org/en/download/
