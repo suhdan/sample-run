@@ -5,13 +5,13 @@ A simple browser game that might teach you to say **no** to that tequila shot on
 ## TODO
 
 - [ ] Host on public domain
-- [ ] Open menu screen
+- [ ] Main screen
+- [ ] State changes (Before, during, after game)
 - [ ] Gameplay:
   - [ ] Moving algorithm for objects, floor, etc.
   - [ ] Input (Jumping)
   - [ ] Scoring
   - [ ] Collision
-- [ ] End screen
 - [ ] Music
   - [ ] Menu
   - [ ] Gameplay sounds
