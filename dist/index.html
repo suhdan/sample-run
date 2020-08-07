@@ -4,39 +4,18 @@
   
   <head>
     <meta charset="UTF-8" />
-    <!-- Update title to "Sober Run" not "Shot Run"-->
     <title>Sober Run</title>
     <meta name="description" content="Web Browser Game" />
     <meta name="author" content="Daniel C. Suh and Jaehoon Han" />
-    <!--add a viewport meta tag-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      canvas {
-        display: block;
-      }
-
-      h1 {
-        text-align: center;
-        z-index: 1;
-      }
-    </style>
   </head>
 
   <body>
 
     <canvas id = "game">Sober Run</canvas>
-    <!-- commenting out bundle source for now 
-      because it's creating "file does not exist" error
+    <script src="dist/bundle.js"></script>
+    <script type="module" src="../src/index.js"></script>
 
-      <script src="dist/bundle.js"></script> -->
-      
-    <script src="../src/index.js"></script>
   </body>
 </html>
