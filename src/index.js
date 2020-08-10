@@ -1,7 +1,8 @@
-import { canvas, ctx, game } from './config.js'
-import Player from './player.js'
-import Obstacle, { Spawn } from './obstacle.js'
-import Text from './text.js'
+import { canvas, ctx, game } from './components/config.js'
+import Player from './components/player.js'
+import Obstacle, { Spawn } from './components/obstacle.js'
+import Text from './components/text.js'
+import "./styles/main.css";
 
 document.addEventListener("DOMContentLoaded", () => {
 
