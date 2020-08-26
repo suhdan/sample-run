@@ -11,4 +11,5 @@ export const game = {
     speedMax: 30,
     initialTimer: 100,
     spawnTimer: 100,
+    over: false
 }
