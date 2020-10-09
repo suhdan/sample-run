@@ -31,4 +31,10 @@ export function Spawn () {
     game.spawnTimer = 60;
     }
     game.spawnTimer--;
+
+    if (game.obstacles.length > 1) {
+        if (game.obstacles[0].x + game.obstacles[0].w < 0) {
+            game.obstacles.shift();
+        }
+    }
 }
