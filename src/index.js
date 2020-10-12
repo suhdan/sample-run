@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function Start() {
 
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
+        canvas.width = 800;
+        canvas.height = 400;
 
         player = new Player(25, canvas.height - 150, 50, 50, '#000000');
         
