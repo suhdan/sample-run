@@ -24,7 +24,7 @@ export function Spawn () {
     if (game.spawnTimer <= 0) {
     let size = 50;
     //Change to humanoid with shot
-    let obstacle = new Obstacle(canvas.width + size, canvas.height - size, size, size, '#FF0000');
+    let obstacle = new Obstacle(canvas.width + size, canvas.height - size - 10, size, size, '#FF0000');
     
     game.obstacles.push(obstacle);;
     //Make spawnTimer random

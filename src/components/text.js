@@ -12,7 +12,7 @@ export default class Text {
     Draw () {
         ctx.beginPath();
         ctx.fillStyle = this.c;
-        ctx.font = this.s + "px sans-serif"; 
+        ctx.font = this.s + "px monospace"; 
         ctx.textAlign = this.a;
         ctx.fillText(this.t, this.x, this.y);
         ctx.closePath();
