@@ -33,13 +33,13 @@ export default class Player {
         this.y += this.dy;
 
         //Gravity
-        if (this.y + this.h < canvas.height) {
+        if (this.y + this.h < canvas.height - 10) {
             this.dy += game.gravity;
             this.grounded = false;
         } else {
             this.dy = 0;
             this.grounded = true;
-            this.y = canvas.height - this.h;
+            this.y = canvas.height - this.h - 10;
         }
 
         this.Draw();

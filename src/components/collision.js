@@ -13,7 +13,7 @@ export default function checkCollision (player, obst) {
         game.obstacles = [];
         game.score = 0;
         game.spawnTimer = game.initialTimer;
-        game.speed = 15;
+        game.speed = 10;
         window.localStorage.setItem('highScore', game.highScore);
         game.over = true;
     }
