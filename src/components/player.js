@@ -11,14 +11,13 @@ document.addEventListener('keyup', function (evt) {
 
 export default class Player {
     constructor (xPos, yPos, width, height, color) {
-        this.x = xPos;
-        this.y = yPos;
-        this.w = width;
-        this.h = height;
-        this.c = color;
-        this.dy = 0;
+        this.xPos = xPos;
+        this.yPos = yPos;
+        this.width = width;
+        this.height = height;
+        this.color = color;
+        this.ySpeed = 0;
         this.jumpForce = 15;
-        this.originalHeight = height;
         this.grounded = false;
         this.jumpTimer = 0;
     }
@@ -30,16 +29,16 @@ export default class Player {
         } else {
             this.jumpTimer = 0;
         }
-        this.y += this.dy;
+        this.yPos += this.ySpeed;
 
         //Gravity
-        if (this.y + this.h < canvas.height - 10) {
-            this.dy += game.gravity;
+        if (this.yPos + this.height < canvas.height - 10) {
+            this.ySpeed += game.gravity;
             this.grounded = false;
         } else {
-            this.dy = 0;
+            this.ySpeed = 0;
             this.grounded = true;
-            this.y = canvas.height - this.h - 10;
+            this.yPos = canvas.height - this.height - 10;
         }
 
         this.Draw();
@@ -48,7 +47,7 @@ export default class Player {
     Jump () {
         if (this.grounded && this.jumpTimer == 0){
             this.jumpTimer = 1;
-            this.dy = -this.jumpForce;
+            this.ySpeed = -this.jumpForce;
         } 
         // OPTIONAL CODE: add code below
         // to make Player jump higher when space/ArrowUp key is held down
@@ -62,8 +61,8 @@ export default class Player {
     Draw () {
     //Change to a humanoid figure later
         ctx.beginPath();
-        ctx.fillStyle = this.c;
-        ctx.fillRect(this.x, this.y, this.w, this.h);
+        ctx.fillStyle = this.color;
+        ctx.fillRect(this.xPos, this.yPos, this.width, this.height);
         ctx.closePath;
     }
 

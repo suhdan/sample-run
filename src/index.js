@@ -21,34 +21,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
         player = new Player(25, canvas.height - 150, 50, 50, '#FFFFFF');
         buildings = [
-            new Background(buildingsImg, 
-                            0, 
-                            0, 
-                            canvas.width, 
-                            canvas.height, 
-                            3,
-                            0),
-            new Background(buildingsImg, 
-                            canvas.width, 
-                            0, 
-                            canvas.width, 
-                            canvas.height, 
-                            3, 
-                            0)
+            new Background(buildingsImg, 0, 0, canvas.width, canvas.height, 3),
+            new Background(buildingsImg, canvas.width, 0, canvas.width, canvas.height, 3)
         ]
         sidewalk = [
-            new Background(sidewalkImg, 
-                            0, 
-                            canvas.height - 30,
-                            1000,
-                            30,
-                            game.speed),
-            new Background(sidewalkImg,
-                            canvas.width,
-                            canvas.height-30,
-                            1000,
-                            30,
-                            game.speed)
+            new Background(sidewalkImg, 0, canvas.height - 30, 1000, 30, game.speed),
+            new Background(sidewalkImg, canvas.width, canvas.height-30, 1000, 30, game.speed)
         ]
         
         if (localStorage.getItem('highScore')) {
@@ -77,7 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         player.Animate();
 
         scoreText.Draw();
-        scoreText.t = "Score: " + Math.trunc(game.score/10) + " HighScore: " + game.highScore;
+        scoreText.text = "Score: " + Math.trunc(game.score/10) + " HighScore: " + game.highScore;
         game.score++;
 
         if (Math.trunc(game.score/10) > game.highScore) {
@@ -85,12 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         if (game.score % 200 ==  0 && game.speed <= game.speedMax) {
             game.speed += game.speedInc;
-            console.log('gamespeed increases!', game.speed);
-            }
-
-        // if (game.speed < game.speedMax) {
-        // game.speed += game.speedInc;
-        // }    
+            }    
     }
 
     Start();

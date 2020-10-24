@@ -5,32 +5,32 @@ export default class Background {
     constructor (imgSource, xPos, yPos, width, height, scrollSpeed) {       
         this.image = new Image;
         this.image.src = imgSource;
-        this.x = xPos;
-        this.y = yPos;
-        this.w = width;
-        this.h = height;
-        this.sp = scrollSpeed;
+        this.xPos = xPos;
+        this.yPos = yPos;
+        this.width = width;
+        this.height = height;
+        this.scrollSpeed = scrollSpeed;
     }
     
     Scroll() {
-        if (this.x <= -this.w + game.speed) {
-            this.x = this.w;
+        if (this.xPos <= -this.width + game.speed) {
+            this.xPos = this.width;
         } else {
-            this.x -= this.sp;
+            this.xPos -= this.scrollSpeed;
         }
         this.Draw();
     }
 
     AcceleratedScroll() {
-        if (this.x <= -canvas.width) {
-            this.x = canvas.width;
+        if (this.xPos <= -canvas.width) {
+            this.xPos = canvas.width;
         } else {
-            this.x -= game.speed;
+            this.xPos -= game.speed;
         }
         this.Draw();
     }
     
     Draw() {
-        ctx.drawImage(this.image, this.x, this.y, this.w, this.h);
+        ctx.drawImage(this.image, this.xPos, this.yPos, this.width, this.height);
     }
 }
