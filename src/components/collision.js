@@ -3,10 +3,10 @@ import { canvas, ctx, game } from './config.js'
 export default function checkCollision (player, obst) {
 
     if ( 
-        player.x            < obst.x + obst.w &&
-        player.x + player.w > obst.x          &&
-        player.y            < obst.y + obst.h &&
-        player.y + player.h > obst.y
+        player.xPos                 < obst.xPos + obst.width &&
+        player.xPos + player.width  > obst.xPos          &&
+        player.yPos                 < obst.yPos + obst.height &&
+        player.yPos + player.height > obst.yPos
     ) {
         //Automatically restart game
         //TO DO: game over screen

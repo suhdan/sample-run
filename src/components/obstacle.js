@@ -2,20 +2,20 @@ import { canvas, ctx, game } from './config.js'
 
 export default class Obstacle {
     constructor (xPos, yPos, width, height, color){
-        this.x = xPos;
-        this.y = yPos;
-        this.w = width;
-        this.h = height;
-        this.c = color;
+        this.xPos = xPos;
+        this.yPos = yPos;
+        this.width = width;
+        this.height = height;
+        this.color = color;
     }      
     Animate () {
-        this.x -= game.speed;
+        this.xPos -= game.speed;
         this.Draw();
     }
     Draw () {
         ctx.beginPath();
-        ctx.fillStyle = this.c;
-        ctx.fillRect(this.x, this.y, this.w, this.h);
+        ctx.fillStyle = this.color;
+        ctx.fillRect(this.xPos, this.yPos, this.width, this.height);
         ctx.closePath;
     }
 }
@@ -33,7 +33,7 @@ export function Spawn () {
     game.spawnTimer--;
 
     if (game.obstacles.length > 1) {
-        if (game.obstacles[0].x + game.obstacles[0].w < 0) {
+        if (game.obstacles[0].xPos + game.obstacles[0].width < 0) {
             game.obstacles.shift();
         }
     }
