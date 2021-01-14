@@ -8,13 +8,6 @@ export default function checkCollision (player, obst) {
         player.yPos                 < obst.yPos + obst.height &&
         player.yPos + player.height > obst.yPos
     ) {
-        //Automatically restart game
-        //TO DO: game over screen
-        game.obstacles = [];
-        game.score = 0;
-        game.spawnTimer = game.initialTimer;
-        game.speed = 10;
-        window.localStorage.setItem('highScore', game.highScore);
-        game.over = true;
+        return true;
     }
 }
