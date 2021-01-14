@@ -10,22 +10,24 @@ document.addEventListener('keyup', function (evt) {
 
 
 export default class Player {
-    constructor (xPos, yPos, width, height, color) {
+    constructor (imgSource, xPos, yPos, width, height) {
+        this.image = new Image();
+        this.image.src = imgSource;
         this.xPos = xPos;
         this.yPos = yPos;
         this.width = width;
         this.height = height;
-        this.color = color;
+        this.xFrame = 0;
         this.ySpeed = 0;
-        this.jumpForce = 15;
+        this.jumpForce = 18;
         this.grounded = false;
         this.jumpTimer = 0;
     }
     
-    Animate () {
+    animate () {
 
         if (keys['Space'] || keys['ArrowUp']) {
-            this.Jump();
+            this.jump();
         } else {
             this.jumpTimer = 0;
         }
@@ -35,16 +37,20 @@ export default class Player {
         if (this.yPos + this.height < canvas.height - 10) {
             this.ySpeed += game.gravity;
             this.grounded = false;
+            this.xFrame = 3;
         } else {
             this.ySpeed = 0;
             this.grounded = true;
             this.yPos = canvas.height - this.height - 10;
+            if(game.frame % 5 == 0) this.xFrame++;
+            if (this.xFrame > 2) this.xFrame = 1;
+            //console.log(this.xFrame, game.score);
         }
 
-        this.Draw();
+        this.draw();
     }
 
-    Jump () {
+    jump () {
         if (this.grounded && this.jumpTimer == 0){
             this.jumpTimer = 1;
             this.ySpeed = -this.jumpForce;
@@ -58,12 +64,12 @@ export default class Player {
             //}
         //_____________________________________________________________
     }    
-    Draw () {
-    //Change to a humanoid figure later
-        ctx.beginPath();
-        ctx.fillStyle = this.color;
-        ctx.fillRect(this.xPos, this.yPos, this.width, this.height);
-        ctx.closePath;
+    draw () {
+        //draw original
+        ctx.drawImage(this.image, this.xFrame * 40, 0, 40, 112, this.xPos, this.yPos, this.width, this.height)
+        // draw large
+        //ctx.drawImage(this.image, this.xFrame * 50, 0, 50, 140, this.xPos, this.yPos, this.width, this.height)
+        
     }
 
 }

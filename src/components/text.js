@@ -9,7 +9,7 @@ export default class Text {
         this.color = color;
         this.size = size;
     }
-    Draw () {
+    draw () {
         ctx.beginPath();
         ctx.fillStyle = this.color;
         ctx.font = this.size + "px monospace"; 
