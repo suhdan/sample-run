@@ -50,6 +50,30 @@ export default class Player {
         this.draw();
     }
 
+    startScreen() {
+        if (keys['Space'] || keys['ArrowUp']) {
+            game.state = 'playing';
+            this.jump();
+        } else {
+            this.jumpTimer = 0;
+        }
+        this.yPos += this.ySpeed;
+
+        //Gravity
+        if (this.yPos + this.height < canvas.height - 10) {
+            this.ySpeed += game.gravity - .75;
+            this.grounded = false;
+            this.xFrame = 3;
+        } else {
+            this.ySpeed = 0;
+            this.grounded = true;
+            this.yPos = canvas.height - this.height - 10;
+            this.xFrame = 0;
+        }
+
+        this.draw();
+    }
+
     jump () {
         if (this.grounded && this.jumpTimer == 0){
             this.jumpTimer = 1;
@@ -65,11 +89,6 @@ export default class Player {
         //_____________________________________________________________
     }    
     draw () {
-        //draw original
-        ctx.drawImage(this.image, this.xFrame * 40, 0, 40, 112, this.xPos, this.yPos, this.width, this.height)
-        // draw large
-        //ctx.drawImage(this.image, this.xFrame * 50, 0, 50, 140, this.xPos, this.yPos, this.width, this.height)
-        
+        ctx.drawImage(this.image, this.xFrame * 40, 0, 40, 112, this.xPos, this.yPos, this.width, this.height);
     }
-
 }

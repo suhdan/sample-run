@@ -8,6 +8,8 @@ export default function checkCollision (player, obst) {
         player.yPos                 < obst.yPos + obst.height &&
         player.yPos + player.height > obst.yPos
     ) {
+        player.xFrame = 4;
+        game.state = 'over';
         return true;
     }
 }
