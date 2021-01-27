@@ -7,12 +7,11 @@
     width: 800px;
     height: 400px;
     background: linear-gradient(180deg, #01003d, #402aa1);
+  }
+
+  .center {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-
-  h1 {
-    text-align: center;
   }
