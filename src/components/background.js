@@ -22,8 +22,8 @@ export default class Background {
     }
 
     acceleratedScroll() {
-        if (this.xPos <= -canvas.width) {
-            this.xPos = canvas.width;
+        if (this.xPos <= -1000) {
+            this.xPos = 800;
         } else {
             this.xPos -= game.speed;
         }
@@ -31,7 +31,6 @@ export default class Background {
     }
     
     draw() {
-        //ctx.drawImage(this.image, 0, 100, 800, 400, this.xPos, this.yPos, this.width, this.height);
         ctx.drawImage(this.image, this.xPos, this.yPos, this.width, this.height);
     }
 }

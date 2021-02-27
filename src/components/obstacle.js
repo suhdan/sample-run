@@ -46,7 +46,7 @@ export function spawnObstacle () {
                 obstacle = new Obstacle(girlImg, canvas.width + 33, canvas.height - 100 - 10, 30, 110, 33, '#FF0000')
         }
  
-        game.obstacles.push(obstacle);;
+        game.obstacles.push(obstacle);
         game.spawnTimer = Math.floor(Math.random() * 30 + 30);
         //if more than 2 obstacles are within 40 frames of the other than set the next obstacle to spawn in 60s
         if(game.obstacles.length > 1){
