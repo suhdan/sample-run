@@ -1,6 +1,6 @@
-# SOBER RUN
+#  RUN
 
-A simple browser game that might teach you to say **no** to that tequila shot on your next night out. Inspired by Google's [T-Rex, Run!][google-game].
+A simple browser game inspired by Google's [T-Rex, Run!][google-game].
 
 ## Local Setup
 
